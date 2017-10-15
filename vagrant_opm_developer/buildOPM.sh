@@ -16,7 +16,7 @@ DUNEVERSION=2.4
 FLAGS="-O3 -DNDEBUG -Wall -ftree-vectorize -mtune=native"
 
 # needed DUNE core modules
-DUNEMODULES="dune-common dune-geometry dune-grid dune-istl"
+# DUNEMODULES="dune-common dune-geometry dune-grid dune-istl"
 
 # needed OPM modules
 OPMMODULES="opm-common opm-output opm-parser opm-material opm-grid opm-core ewoms opm-simulators"
