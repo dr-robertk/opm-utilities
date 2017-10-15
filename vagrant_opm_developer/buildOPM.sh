@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # replace this link with your OPM fork
-OPMURL=https://github.com/OPM/
+#OPMURL=https://github.com/OPM/
+OPMURL=https://github.com/dr-robertk/
 
 # this script downloads the necessary set of dune opm modules
 # to run the opm-simulators, in particular the blackoil simulator flow
