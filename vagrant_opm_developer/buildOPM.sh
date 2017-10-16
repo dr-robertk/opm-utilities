@@ -42,7 +42,7 @@ if ! test -d build ; then
   mkdir build ; cd build
   # sometimes it might be necessary to also specify the path to ping command
   PINGPATH=/bin
-  cmake ../ -DCMAKE_INSTALL_PREFIX=$LIBECL_INSTALLDIR
+  cmake ../ -DCMAKE_INSTALL_PREFIX=$LIBECL_INSTALLDIR -DBUILD_APPLICATIONS=ON
   make -j4 ; make install
   cd ../
 fi

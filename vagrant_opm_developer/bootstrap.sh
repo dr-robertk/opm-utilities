@@ -31,3 +31,6 @@ sudo apt-get install -y libboost-all-dev libblas-dev liblapack-dev libsuitespars
 
 # Other utilities that are required by tutorials etc.
 sudo apt-get install unzip -y
+
+# Latex
+# sudo apt-get install -y texlive-latex-base
