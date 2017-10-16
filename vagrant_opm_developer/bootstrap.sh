@@ -33,4 +33,4 @@ sudo apt-get install -y libboost-all-dev libblas-dev liblapack-dev libsuitespars
 sudo apt-get install unzip -y
 
 # Latex
-# sudo apt-get install -y texlive-latex-base
+# sudo apt-get install -y texlive-latex-base ghostscript gnuplot

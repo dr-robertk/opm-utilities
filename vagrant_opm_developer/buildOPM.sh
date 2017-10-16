@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # replace this link with your OPM fork
-#OPMURL=https://github.com/OPM/
-OPMURL=https://github.com/dr-robertk/
+OPMURL=https://github.com/OPM/
+#OPMURL=https://github.com/dr-robertk/
 
 # this script downloads the necessary set of dune opm modules
 # to run the opm-simulators, in particular the blackoil simulator flow
@@ -42,8 +42,8 @@ if ! test -d build ; then
   mkdir build ; cd build
   # sometimes it might be necessary to also specify the path to ping command
   PINGPATH=/bin
-  cmake ../ -DCMAKE_INSTALL_PREFIX=$LIBECL_INSTALLDIR -DBUILD_APPLICATIONS=ON
-  make -j4 ; make install
+  cmake ../ -DCMAKE_INSTALL_PREFIX=$LIBECL_INSTALLDIR -DBUILD_APPLICATIONS=ON -DBUILD_SHARED_LIBS=OFF
+  make -j2 ; make install
   cd ../
 fi
 cd ../
@@ -56,7 +56,7 @@ echo "\
 OPMDIR=`pwd`
 BUILDDIR=build
 USE_CMAKE=yes
-MAKE_FLAGS=-j4
+MAKE_FLAGS=-j2
 CMAKE_FLAGS=\"-DCMAKE_CXX_FLAGS=\\\"$FLAGS\\\"  \\
  -DOPM_COMMON_ROOT=\$OPMDIR/opm-common \\
  -Decl_DIR=\$OPMDIR/$LIBECL/build \\
@@ -86,5 +86,8 @@ for MOD in $OPMMODULES ; do
 done
 
 # build all DUNE and OPM modules in the correct order
-#./dune-common/bin/dunecontrol --opts=config.opts all
-dunecontrol --opts=config.opts all
+if test -d ./dune-common ; then
+  ./dune-common/bin/dunecontrol --opts=config.opts all
+else
+  dunecontrol --opts=config.opts all
+fi
