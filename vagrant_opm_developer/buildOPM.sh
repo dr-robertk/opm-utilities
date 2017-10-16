@@ -86,4 +86,5 @@ for MOD in $OPMMODULES ; do
 done
 
 # build all DUNE and OPM modules in the correct order
-./dune-common/bin/dunecontrol --opts=config.opts all
+#./dune-common/bin/dunecontrol --opts=config.opts all
+dunecontrol --opts=config.opts all
